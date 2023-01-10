@@ -1,13 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Context } from "../context/ContextProvider";
 
 export default function Login() {
     const inputName = React.useRef();
-
+    const navigate = useNavigate();
+    const {user, setUser} = React.useContext(Context);
+    // console.log("user" + user);
+    
     const chat = (e) => {
         e.preventDefault();
-        console.log("To login");
-        console.log(inputName.current.value);
-        inputName.current.value = ""
+        setUser(inputName.current.value);
+        // console.log("To login");
+        // console.log(inputName.current.value);
+        inputName.current.value = "";
+        navigate("/chat");
     }
 
     return (

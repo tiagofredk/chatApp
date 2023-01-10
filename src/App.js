@@ -1,10 +1,13 @@
 import './App.scss';
-import Login from './components/Login';
+import Navigation from './components/Navigation';
+import ContextProvider from './context/ContextProvider';
 
 function App() {
   return (
     <div className="App">
-      <Login/>
+      <ContextProvider>
+        <Navigation/>
+      </ContextProvider>
     </div>
   );
 }
