@@ -11,16 +11,21 @@
     .right-bar {
         height: 100%;
         width: 100%;
-        .messages-box {
+        .messages-box-container {
             background-color: rgb(190, 189, 189);
             height: 80%;
             overflow: hidden scroll;
-            // display: none;
             &::-webkit-scrollbar{
                 display: none;
             }
+            .message-box{
+                display: flex;
+                width: 200px;
+                height: auto;
+                .message-delete-btn{
+                    margin-left: 20%;
+                }
+            }
         }
-
-        
     }
 }

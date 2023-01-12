@@ -4,11 +4,14 @@ export const Context = React.createContext();
 
 export default function ContextProvider({ children }) {
     const [user, setUser] = React.useState("Random Name");
+    const [error, setError] = React.useState(null);
     return (
         <Context.Provider value={
             {
                 user,
                 setUser,
+                error,
+                setError
             }
         }>
             {children}
