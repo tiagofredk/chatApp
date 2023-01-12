@@ -1,0 +1,26 @@
+.chat-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+
+    .left-bar {
+        min-width: 150px;
+        background-color: rgb(42, 35, 83);
+    }
+
+    .right-bar {
+        height: 100%;
+        width: 100%;
+        .messages-box {
+            background-color: rgb(190, 189, 189);
+            height: 80%;
+            overflow: hidden scroll;
+            // display: none;
+            &::-webkit-scrollbar{
+                display: none;
+            }
+        }
+
+        
+    }
+}

@@ -5,7 +5,7 @@ import ContextProvider from './context/ContextProvider';
 function App() {
   return (
     <div className="App">
-      <ContextProvider>
+      <ContextProvider >
         <Navigation/>
       </ContextProvider>
     </div>

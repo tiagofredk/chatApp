@@ -5,9 +5,9 @@ import { Context } from "../context/ContextProvider";
 export default function Login() {
     const inputName = React.useRef();
     const navigate = useNavigate();
-    const {user, setUser} = React.useContext(Context);
+    const { setUser } = React.useContext(Context);
     // console.log("user" + user);
-    
+
     const chat = (e) => {
         e.preventDefault();
         setUser(inputName.current.value);
@@ -18,27 +18,32 @@ export default function Login() {
     }
 
     return (
-        <div id="inputuser">
-            <form onSubmit={e => chat(e)}>
-                <div className="form">
-                    <input
-                        name="name"
-                        type="text"
-                        className="form__input"
-                        id="name"
-                        autoComplete="off"
-                        required
-                        ref={inputName}
-                    />
-                    <label className="form__label" htmlFor="name">
-                        <span className="form__name">Name</span>
-                    </label>
-                </div>
+        <div className="login-container">
+            <div className="login-box">
+                <h1>Login</h1>
+                <div className="login-form-box" id="inputuser">
+                    <form onSubmit={e => chat(e)}>
+                        <div className="form">
+                            <input
+                                name="name"
+                                type="text"
+                                className="form__input"
+                                id="name"
+                                autoComplete="off"
+                                required
+                                ref={inputName}
+                            />
+                            <label className="form__label" htmlFor="name">
+                                <span className="form__name">Name</span>
+                            </label>
+                        </div>
 
-                <div className="box_btn">
-                    <button type="submit" className="box" id="btn" >Login</button>
+                        <div className="box_btn">
+                            <button type="submit" className="box" id="btn" >Login</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     )
 }

@@ -1,11 +1,14 @@
 import React from 'react'
 import User from './User'
 import { Context } from '../context/ContextProvider';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Chat() {
-    const {user, setUser}  = React.useContext(Context);
+    const { user } = React.useContext(Context);
     const inputMessage = React.useRef("");
     const [messageArray, setMessageArray] = React.useState([]);
+    const [id, setId] = React.useState(null);
+
     // const [messagesObj, setMessagesObj] = React.useState(
     //     {
     //         user:"",
@@ -15,11 +18,28 @@ export default function Chat() {
     //     }
     // );
 
+    // send message
     const sendMessage = (e) => {
         e.preventDefault();
-        setMessageArray([...messageArray, <p>{inputMessage.current.value}</p>]);
+        const id = uuidv4();
+        setId(id);
+        setMessageArray([
+            ...messageArray,
+            <p id={id}>{inputMessage.current.value}</p>
+        ]);
         inputMessage.current.value = "";
-    }
+    };
+
+    // automatic scroll function for messages
+    React.useEffect(() => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+
+    }, [messageArray, id])
+
+
     return (
         <div className='chat-container'>
             <div className='left-bar'>
@@ -29,16 +49,15 @@ export default function Chat() {
                 <div className='messages-box'>
                     {messageArray}
                 </div>
-                <div id='inputuser'>
+                <div className='form-box' id='inputuser'>
                     <form onSubmit={e => sendMessage(e)}>
                         <div className="form">
                             <input
                                 name="message"
                                 type="text"
+                                required
                                 className="form__input"
                                 id="name"
-                                autoComplete="off"
-                                required
                                 ref={inputMessage}
                             />
                             <label className="form__label" htmlFor="name">
