@@ -5,15 +5,19 @@ import { Context } from "../context/ContextProvider";
 export default function Login() {
     const inputName = React.useRef();
     const navigate = useNavigate();
-    const { setUser } = React.useContext(Context);
+    const { user, setUser } = React.useContext(Context);
     // console.log("user" + user);
 
     const chat = (e) => {
         e.preventDefault();
-        setUser(inputName.current.value);
+        setUser(prevState => ({
+            ...prevState,
+            name: inputName.current.value
+        }));
         // console.log("To login");
         // console.log(inputName.current.value);
         inputName.current.value = "";
+        console.log(user);
         navigate("/chat");
     }
 

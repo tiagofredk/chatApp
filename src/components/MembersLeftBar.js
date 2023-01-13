@@ -1,12 +1,15 @@
 import React from 'react'
 
-export default function MembersLeftBar(members) {
+export default function MembersLeftBar(user) {
+    console.log(user.user.members);
     return (
         <div className='members-container'>
             <p>Members</p>
                 <ul>
-                    {/* {members} */}
-                    {/* <li>Tiago</li> */}
+                    {user.user.members.map( item => {
+                        console.log(item)
+                        return <p>{item.name}</p>
+                    })}
                 </ul>
         </div>
     )
