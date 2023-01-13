@@ -3,25 +3,31 @@ import User from './User'
 import { Context } from '../context/ContextProvider';
 import { v4 as uuidv4 } from 'uuid';
 import ModalError from './ModalError';
+import { io } from 'socket.io-client';
 
 export default function Chat() {
+    const socket = io("http://localhost:5000");
     const { user, error, setError } = React.useContext(Context);
     const inputMessage = React.useRef("");
     const [messageArray, setMessageArray] = React.useState([]);
     const [id, setId] = React.useState(null);
+    const [messagesObj, setMessagesObj] = React.useState(
+        {
+            id: uuidv4(),
+            text: inputMessage.current.value,
+            user: {
+                name: user.name,
+                id: user.id
+            },
+            timestamp: Date.now()
+        }
+    );
 
-    // const [messagesObj, setMessagesObj] = React.useState(
-    //     {
-    //         user:"",
-    //         id:null,
-    //         message:"",
-    //         messageReadStatus: false,
-    //     }
-    // );
-    const deleteMessage = (id)=> {
+    // delete message
+    const deleteMessage = (id) => {
         setMessageArray(prevState => prevState.filter(message => message.key !== id));
     }
-    
+
     // send message
     const sendMessage = (e) => {
         e.preventDefault();
@@ -31,7 +37,7 @@ export default function Chat() {
             ...messageArray,
             <div className='message-box' key={id} id={id}>
                 <p>{inputMessage.current.value}</p>
-                <div className='message-delete-btn' onClick={()=> deleteMessage(id)}>x</div>
+                <div className='message-delete-btn' onClick={() => deleteMessage(id)}>x</div>
             </div>
         ]);
         inputMessage.current.value = "";
@@ -43,8 +49,6 @@ export default function Chat() {
         if (element) {
             element.scrollIntoView({ behavior: "smooth" });
         }
-        
-        console.log(messageArray);
     }, [messageArray, id])
 
     return (
