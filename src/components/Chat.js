@@ -3,13 +3,13 @@ import User from './User'
 import { Context } from '../context/ContextProvider';
 import { v4 as uuidv4 } from 'uuid';
 import ModalError from './ModalError';
-import { io } from 'socket.io-client';
+// import { io } from 'socket.io-client';
 import ProjectleftBar from './ProjectleftBar';
 import MembersLeftBar from './MembersLeftBar';
 import Channels from './Channels';
 
 export default function Chat() {
-    const socket = io("http://localhost:5000");
+    // const socket = io("http://localhost:5000");
     const { user, error, setError } = React.useContext(Context);
     const inputMessage = React.useRef("");
     const [messageArray, setMessageArray] = React.useState([]);

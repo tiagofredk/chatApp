@@ -10,10 +10,10 @@ export default function Login() {
 
     const chat = (e) => {
         e.preventDefault();
-        setUser(inputName.current.value);
+        // setUser(inputName.current.value);
         // console.log("To login");
         // console.log(inputName.current.value);
-        inputName.current.value = "";
+        // inputName.current.value = "";
         navigate("/chat");
     }
 
@@ -30,7 +30,7 @@ export default function Login() {
                                 className="form__input"
                                 id="name"
                                 autoComplete="off"
-                                required
+                                // required
                                 ref={inputName}
                             />
                             <label className="form__label" htmlFor="name">
