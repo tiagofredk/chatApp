@@ -5,7 +5,7 @@ export default function User(prop) {
     return (
         <div className='user-container'>
             <p>
-                {prop.prop}
+                {prop.user}
             </p>
         </div>
     )

@@ -60,9 +60,9 @@ export default function Chat() {
             <div className='left-bar'>
                 <ProjectleftBar />
                 <div className='user-members-box'>
-                    <User prop={user} />
-                    <Channels />
-                    <MembersLeftBar />
+                    <User user={user} />
+                    <Channels user={user} />
+                    <MembersLeftBar user={user} />
                 </div>
             </div>
             <div className='right-bar'>
