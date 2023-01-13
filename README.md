@@ -1,9 +1,8 @@
 ###Chat App
 
 ##### Adicione validação ao campo de entrada de mensagem para garantir que ele não esteja vazio antes de permitir o envio.
-##### Armazene as mensagens enviadas em um estado ou usando algum tipo de armazenamento local para que elas possam ser recuperadas depois que a página é atualizada.
+##### Armazene as mensagens com mongodb
 ##### Adicione a capacidade de excluir uma mensagem enviada pelo usuário.
-##### Adicione a capacidade de editar uma mensagem enviada pelo usuário.
 ##### Adicione a capacidade de verificar se uma mensagem foi lida ou não.
 ##### Adicione a capacidade de carregar mensagens anteriores ao carregar a página.
 ##### Adicione a capacidade de adicionar emoticons ou outras formas de expressão às mensagens.
@@ -14,7 +13,7 @@
 - Objeto da mensagem
 ##### Armazenar a data e hora da mensagem, em vez de apenas o timestamp. Isso permitiria que as mensagens fossem ordenadas de acordo com a data e hora em que foram enviadas.
 
-##### Adicionar um campo para o id da sala de chat em que a mensagem foi enviada. Isso permitiria que as mensagens fossem associadas à sala de chat correta e exibidas na interface do usuário.
+##### Adicionar um campo para o id do grupo de chat em que a mensagem foi enviada. Isso permitiria que as mensagens fossem associadas ào grupo de chat correta e exibidas na interface do usuário.
 
 ##### Adicionar um campo para os dados de usuário, como nome de usuário, id de usuário e foto de perfil. Isso permitiria que as mensagens fossem associadas ao usuário correto e exibidas na interface do usuário.
 
