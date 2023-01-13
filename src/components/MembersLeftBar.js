@@ -7,8 +7,10 @@ export default function MembersLeftBar(user) {
             <p>Members</p>
                 <ul>
                     {user.user.members.map( item => {
-                        console.log(item)
-                        return <p>{item.name}</p>
+                        console.log("members" + item)
+                        return (
+                        <p>{item.name}</p>
+                        )
                     })}
                 </ul>
         </div>
