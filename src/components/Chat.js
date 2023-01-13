@@ -4,6 +4,9 @@ import { Context } from '../context/ContextProvider';
 import { v4 as uuidv4 } from 'uuid';
 import ModalError from './ModalError';
 import { io } from 'socket.io-client';
+import ProjectleftBar from './ProjectleftBar';
+import MembersLeftBar from './MembersLeftBar';
+import Channels from './Channels';
 
 export default function Chat() {
     const socket = io("http://localhost:5000");
@@ -55,7 +58,12 @@ export default function Chat() {
         <div className='chat-container'>
             {error && <ModalError message={error} />}
             <div className='left-bar'>
-                <User prop={user} />
+                <ProjectleftBar />
+                <div className='user-members-box'>
+                    <User prop={user} />
+                    <Channels />
+                    <MembersLeftBar />
+                </div>
             </div>
             <div className='right-bar'>
                 <div className='messages-box-container'>

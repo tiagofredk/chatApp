@@ -4,8 +4,53 @@
     height: 100vh;
 
     .left-bar {
+        display: flex;
         min-width: 150px;
         background-color: rgb(42, 35, 83);
+        .project-icon-container {
+            height: 100vh;
+            min-width: 50px;
+            border-right: rgb(172, 170, 170) solid 1px;
+            .project-icon {
+                p {
+                    color: #fff;
+                }
+            }
+        }
+        .user-members-box {
+            min-width: 200px;
+            height: 100vh;
+            .user-container {
+                border-bottom: rgb(172, 170, 170) solid 1px;
+                height: 30px;
+                width: 100%;
+                p {
+                    color: #fff;
+                }
+            }
+            .channels-container {
+                border-bottom: rgb(172, 170, 170) solid 1px;
+                min-height: 100px;
+                width: 100%;
+                .channel {
+                    p {
+                        color: #fff;
+                    }
+                }
+            }
+            .members-container {
+                min-height: 100px;
+                width: 100%;
+                p{
+                    color: #fff;
+                }
+                ul {
+                    li {
+                        color: #fff;
+                    }
+                }
+            }
+        }
     }
 
     .right-bar {
@@ -15,14 +60,14 @@
             background-color: rgb(190, 189, 189);
             height: 80%;
             overflow: hidden scroll;
-            &::-webkit-scrollbar{
+            &::-webkit-scrollbar {
                 display: none;
             }
-            .message-box{
+            .message-box {
                 display: flex;
                 width: 100%;
                 height: auto;
-                .message-delete-btn{
+                .message-delete-btn {
                     margin-left: 20%;
                 }
             }

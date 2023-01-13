@@ -3,6 +3,10 @@ import React from 'react'
 export default function User(prop) {
 
     return (
-        <div>{prop.prop}</div>
+        <div className='user-container'>
+            <p>
+                {prop.prop}
+            </p>
+        </div>
     )
 }
