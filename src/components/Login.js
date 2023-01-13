@@ -8,15 +8,17 @@ export default function Login() {
     const { user, setUser } = React.useContext(Context);
     // console.log("user" + user);
 
-    const chat = (e) => {
+    // log the user
+    const login = (e) => {
         e.preventDefault();
-        setUser(prevState => ({
-            ...prevState,
-            name: inputName.current.value
-        }));
+        // setUser(prevState => ({
+        //     ...prevState,
+        //     name: inputName.current.value
+        // }));
         // console.log("To login");
         // console.log(inputName.current.value);
-        inputName.current.value = "";
+        // inputName.current.value = "";
+        console.log("login");
         console.log(user);
         navigate("/chat");
     }
@@ -26,7 +28,7 @@ export default function Login() {
             <div className="login-box">
                 <h1>Login</h1>
                 <div className="login-form-box" id="inputuser">
-                    <form onSubmit={e => chat(e)}>
+                    <form onSubmit={e => login(e)}>
                         <div className="form">
                             <input
                                 name="name"

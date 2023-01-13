@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function User(user) {
-// console.log(user);
+export default function User(prop) {
+// console.log(user.user.name);
     return (
         <div className='user-container'>
-            <p>
-                {user.prop.name}
+            <p>User
+                {prop.user.name}
             </p>
         </div>
     )
