@@ -9,7 +9,7 @@ export default function Channels(prop) {
                     // console.log(item.Channels);
                     return (
                         item.channels.map(item => {
-                            return <p>{item.name}</p>
+                            return <p>#{item.name}</p>
                         })
                     )
                 })}

@@ -41,7 +41,7 @@
             .members-container {
                 min-height: 100px;
                 width: 100%;
-                p{
+                p {
                     color: #fff;
                 }
                 ul {
@@ -54,11 +54,11 @@
     }
 
     .right-bar {
-        height: 100%;
-        width: 100%;
+        height: 100vh;
+        width: 100vw;
         .messages-box-container {
             background-color: rgb(190, 189, 189);
-            height: 80%;
+            height: 70%;
             overflow: hidden scroll;
             &::-webkit-scrollbar {
                 display: none;
@@ -69,6 +69,29 @@
                 height: auto;
                 .message-delete-btn {
                     margin-left: 20%;
+                }
+            }
+        }
+        .form-container {
+            height: auto;
+            width: auto;
+            form {
+                display: flex;
+                .form-box {
+                    textarea {
+                        width: 50vw;
+                        height: 20vh;
+                    }
+                    // label {
+                    //     span {
+                    //     }
+                    // }
+                }
+                .box_btn{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    button{}
                 }
             }
         }

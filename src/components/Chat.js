@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import ModalError from './ModalError';
 // import { io } from 'socket.io-client';
 import ProjectleftBar from './ProjectleftBar';
-import MembersLeftBar from './MembersLeftBar';
+import DirectMessages from './DirectMessages';
 import Channels from './Channels';
 
 export default function Chat() {
@@ -64,30 +64,32 @@ export default function Chat() {
                 <div className='user-members-box'>
                     <User user={user} />
                     <Channels user={user} />
-                    <MembersLeftBar user={user} />
+                    <DirectMessages user={user} />
                 </div>
             </div>
             <div className='right-bar'>
                 <div className='messages-box-container'>
                     {messageArray}
                 </div>
-                <div className='form-box' id='inputuser'>
+                <div className='form-container'>
                     <form onSubmit={e => sendMessage(e)}>
-                        <div className="form">
-                            <input
+                        <div className="form-box">
+                            <textarea
+                                rows="20" 
+                                cols="50"
                                 name="message"
                                 type="text"
                                 required
-                                className="form__input"
+                                className="form__input2"
                                 id="name"
                                 ref={inputMessage}
                             />
-                            <label className="form__label" htmlFor="name">
-                                <span className="form__name">Message</span>
-                            </label>
+                            {/* <label className="form__label2" htmlFor="name">
+                                <span className="form__name2">Message</span>
+                            </label> */}
                         </div>
                         <div className="box_btn">
-                            <button type="submit" className="box" id="btn" >Send</button>
+                            <button type="submit" className="box" id="btn" > &#62; </button>
                         </div>
                     </form>
                 </div>

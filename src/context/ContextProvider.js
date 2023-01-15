@@ -4,6 +4,7 @@ export const Context = React.createContext();
 
 export default function ContextProvider({ children }) {
     const [error, setError] = React.useState(null);
+    const [project, setProject] = React.useState(null); // State to reference wich project is active at the moment
     const [user, setUser] = React.useState({
         name: "User Name",
         id: "Id",
@@ -12,16 +13,16 @@ export default function ContextProvider({ children }) {
             name: "John Doe",
             messages: [
                 {
-                    id: 12345,
+                    messageId: 12345,
                     text: "Hey, how's it going?",
                     user: {
-                        name: "User1",
-                        id: "user1"
+                        name: "Tiago",
+                        id: "contact0"
                     },
                     timestamp: new Date().toISOString()
                 },
                 {
-                    id: 123456,
+                    messageId: 123456,
                     text: "Not bad, thanks for asking.",
                     user: {
                         name: "John Doe",
@@ -42,7 +43,7 @@ export default function ContextProvider({ children }) {
             ownerId: "Id",
             channels: [{
                 id: "channel1", 
-                name: "Channel 1", 
+                name: "Channel TK", 
                 messages: [
                     {
                         id: 12345,
@@ -64,7 +65,37 @@ export default function ContextProvider({ children }) {
                     }
                 ]
             }],
-            members: [{ userId: 1234556, name: "member Name" }]
+            members: [{ userId: 1234556, name: "Atibiu" }]
+        },
+        {
+            id: 12345,
+            name: "AN", // project name
+            ownerId: "Id",
+            channels: [{
+                id: "channel1", 
+                name: "Channel AN", 
+                messages: [
+                    {
+                        id: 12345,
+                        text: "Hello world!",
+                        user: {
+                            name: "User1",
+                            id: "user1"
+                        },
+                        timestamp: new Date().toISOString()
+                    },
+                    {
+                        id: 23456,
+                        text: "Welcome to the channel!",
+                        user: {
+                            name: "User2",
+                            id: "user2"
+                        },
+                        timestamp: new Date().toISOString()
+                    }
+                ]
+            }],
+            members: [{ userId: 1234556, name: "Caroline" }]
         }],
     });
 
@@ -74,7 +105,9 @@ export default function ContextProvider({ children }) {
                 user,
                 setUser,
                 error,
-                setError
+                setError,
+                project,
+                setProject
             }
         }>
             {children}
