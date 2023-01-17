@@ -10,7 +10,7 @@ import Channels from './Channels';
 
 export default function Chat() {
     // const socket = io("http://localhost:5000");
-    const { user, error, setError } = React.useContext(Context);
+    const { user, error, setError, activeProject, setActiveProject } = React.useContext(Context);
     const inputMessage = React.useRef("");
     const [messageArray, setMessageArray] = React.useState([]);
     const [id, setId] = React.useState(null);
@@ -63,7 +63,7 @@ export default function Chat() {
                 <ProjectleftBar user={user} />
                 <div className='user-members-box'>
                     <User user={user} />
-                    <Channels user={user} />
+                    <Channels user={user} activeProject={activeProject} />
                     <DirectMessages user={user} />
                 </div>
             </div>
