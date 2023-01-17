@@ -9,37 +9,6 @@ export default function ContextProvider({ children }) {
         name: "Tiago",
         id: "5dc1ff2d-1d20-439d-adef-247df0a39a52",
         activeProject: "TK", // active project to load at chat page
-        directMessages: [
-            {
-                id: "contact1",
-                name: "John Doe",
-                messages: [
-                    {
-                        messageId: 12345,
-                        text: "Hey, how's it going?",
-                        user: {
-                            name: "Tiago",
-                            id: "contact0"
-                        },
-                        timestamp: new Date().toISOString()
-                    },
-                    {
-                        messageId: 123456,
-                        text: "Not bad, thanks for asking.",
-                        user: {
-                            name: "John Doe",
-                            id: "contact1"
-                        },
-                        timestamp: new Date().toISOString()
-                    }
-                ]
-            },
-            {
-                id: "contact2",
-                name: "Jane Smith",
-                messages: []
-            }
-        ],
         projects: [
             {
                 id: "12345",
@@ -71,7 +40,38 @@ export default function ContextProvider({ children }) {
                         ]
                     }
                 ],
-                members: [{ userId: 1234556, name: "Atibiu" }]
+                members: [{ userId: 1234556, name: "Atibiu" }],
+                directMessages: [
+                    {
+                        id: "contact1",
+                        name: "John Doe",
+                        messages: [
+                            {
+                                messageId: 12345,
+                                text: "Hey, how's it going?",
+                                user: {
+                                    name: "Tiago",
+                                    id: "contact0"
+                                },
+                                timestamp: new Date().toISOString()
+                            },
+                            {
+                                messageId: 123456,
+                                text: "Not bad, thanks for asking.",
+                                user: {
+                                    name: "John Doe",
+                                    id: "contact1"
+                                },
+                                timestamp: new Date().toISOString()
+                            }
+                        ]
+                    },
+                    {
+                        id: "contact2",
+                        name: "Jane Smith",
+                        messages: []
+                    }
+                ],
             },
             {
                 id: "123456",
@@ -101,7 +101,8 @@ export default function ContextProvider({ children }) {
                         }
                     ]
                 }],
-                members: [{ userId: 1234556, name: "Caroline" }]
+                members: [{ userId: 1234556, name: "Caroline" }],
+                directMessages: []
             }
         ],
     });

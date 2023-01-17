@@ -1,8 +1,9 @@
 import React from 'react'
 
 export default function Channels(prop) {
-    console.log(prop.user.projects);
-    console.log(prop.activeProject)
+    // console.log(prop.user.projects);
+    // console.log(prop.activeProject);
+    console.log(prop);
     return (
         <div className='channels-container'>
             <div className='channel'>

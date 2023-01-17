@@ -64,7 +64,7 @@ export default function Chat() {
                 <div className='user-members-box'>
                     <User user={user} />
                     <Channels user={user} activeProject={activeProject} />
-                    <DirectMessages user={user} />
+                    <DirectMessages user={user} activeProject={activeProject} />
                 </div>
             </div>
             <div className='right-bar'>
@@ -75,7 +75,7 @@ export default function Chat() {
                     <form onSubmit={e => sendMessage(e)}>
                         <div className="form-box">
                             <textarea
-                                rows="20" 
+                                rows="20"
                                 cols="50"
                                 name="message"
                                 type="text"
