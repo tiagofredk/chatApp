@@ -6,7 +6,6 @@ export default function Login() {
     const inputName = React.useRef();
     const navigate = useNavigate();
     const { user, setUser } = React.useContext(Context);
-    // console.log("user" + user);
 
     // log the user
     const login = (e) => {
