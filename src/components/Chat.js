@@ -10,11 +10,11 @@ import Channels from './Channels';
 
 export default function Chat() {
     // const socket = io("http://localhost:5000");
-    const { user, error, setError, activeProject, setActiveProject } = React.useContext(Context);
+    const { user, error, setError, activeProject, setActiveProject, messageArray, setMessageArray } = React.useContext(Context);
     const inputMessage = React.useRef("");
-    const [messageArray, setMessageArray] = React.useState([]);
+
     const [id, setId] = React.useState(null);
-    const [messagesObj, setMessagesObj] = React.useState(
+    /* const [messagesObj, setMessagesObj] = React.useState(
         {
             id: uuidv4(),
             channel: "string",
@@ -25,7 +25,7 @@ export default function Chat() {
             },
             timestamp: new Date().toISOString()
         }
-    );
+    ); */
 
     // delete message
     const deleteMessage = (id) => {

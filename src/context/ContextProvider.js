@@ -5,6 +5,7 @@ export const Context = React.createContext();
 export default function ContextProvider({ children }) {
     const [error, setError] = React.useState(null);
     const [activeProject, setActiveProject] = React.useState("TK"); // State to reference wich project is active at the moment
+    const [messageArray, setMessageArray] = React.useState([]); // array of html message elements
     const [user, setUser] = React.useState({
         name: "Tiago",
         id: "5dc1ff2d-1d20-439d-adef-247df0a39a52",
@@ -115,7 +116,9 @@ export default function ContextProvider({ children }) {
                 error,
                 setError,
                 activeProject,
-                setActiveProject
+                setActiveProject,
+                messageArray, 
+                setMessageArray
             }
         }>
             {children}
