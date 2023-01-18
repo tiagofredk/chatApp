@@ -1,7 +1,7 @@
 import React from 'react'
 import User from './User'
 import { Context } from '../context/ContextProvider';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 import ModalError from './ModalError';
 // import { io } from 'socket.io-client';
 import ProjectleftBar from './ProjectleftBar';
@@ -10,10 +10,20 @@ import Channels from './Channels';
 
 export default function Chat() {
     // const socket = io("http://localhost:5000");
-    const { user, error, setError, activeProject, setActiveProject, messageArray, setMessageArray } = React.useContext(Context);
-    const inputMessage = React.useRef("");
+    const {
+        user,
+        error,
+        /* setError, */
+        activeProject,
+        /* setActiveProject, */
+        messageArray,
+        /* setMessageArray, */
+        sendMessage,
+        id,
+        inputMessage
+    } = React.useContext(Context);
+    // const inputMessage = React.useRef("");
 
-    const [id, setId] = React.useState(null);
     /* const [messagesObj, setMessagesObj] = React.useState(
         {
             id: uuidv4(),
@@ -26,27 +36,6 @@ export default function Chat() {
             timestamp: new Date().toISOString()
         }
     ); */
-
-    // delete message
-    const deleteMessage = (id) => {
-        setMessageArray(prevState => prevState.filter(message => message.key !== id));
-    }
-
-    // send message
-    const sendMessage = (e) => {
-        e.preventDefault();
-        const id = uuidv4();
-        setId(id);
-        setMessageArray([
-            ...messageArray,
-            <div className='message-box' key={id} id={id}>
-                <p>{inputMessage.current.value}</p>
-                <div className='message-delete-btn' onClick={() => deleteMessage(id)}>x</div>
-            </div>
-        ]);
-
-        inputMessage.current.value = "";
-    };
 
     // automatic scroll function for messages
     React.useEffect(() => {
@@ -72,7 +61,7 @@ export default function Chat() {
                     {messageArray}
                 </div>
                 <div className='form-container'>
-                    <form onSubmit={e => sendMessage(e)}>
+                    <form onSubmit={e => sendMessage(e, inputMessage)}>
                         <div className="form-box">
                             <textarea
                                 rows="20"
