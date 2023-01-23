@@ -114,7 +114,7 @@ export default function ContextProvider({ children }) {
 
     const sendMessage = (e, inputMessage) => {
         console.log("Input");
-        console.log(inputMessage)
+        console.log(inputMessage);
         e.preventDefault();
         const id = uuidv4();
         setId(id);
