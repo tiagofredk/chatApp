@@ -6,9 +6,9 @@ export default function ProjectleftBar(prop) {
     return (
         <div className='project-icon-container'>
             <div className='project-icon'>
-                {prop.user.projects.map(item => {
+                {prop.user.projects.map((item, i) => {
                     // console.log(item);
-                    return <p onClick={() => setActiveProject(item.name)}>{item.name}</p>
+                    return <p key={i} onClick={() => setActiveProject(item.name)}>{item.name}</p>
                 })}            
             </div>
         </div>

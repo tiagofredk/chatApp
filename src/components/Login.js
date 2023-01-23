@@ -4,6 +4,7 @@ import { Context } from "../context/ContextProvider";
 
 export default function Login() {
     const inputName = React.useRef();
+    const inputEmail = React.useRef();
     const navigate = useNavigate();
     const { user, setUser } = React.useContext(Context);
 
@@ -29,18 +30,34 @@ export default function Login() {
                 <div className="login-form-box" id="inputuser">
                     <form onSubmit={e => login(e)}>
                         <div className="form">
-                            <input
-                                name="name"
-                                type="text"
-                                className="form__input"
-                                id="name"
-                                autoComplete="off"
-                                // required
-                                ref={inputName}
-                            />
-                            <label className="form__label" htmlFor="name">
-                                <span className="form__name">Name</span>
-                            </label>
+                            <>
+                                <input
+                                    name="name"
+                                    type="text"
+                                    className="form__input"
+                                    id="name"
+                                    autoComplete="off"
+                                    // required
+                                    ref={inputName}
+                                />
+                                <label className="form__label" htmlFor="name">
+                                    <span className="form__name">Name</span>
+                                </label>
+                            </>
+                            <>
+                                <input
+                                    name="name"
+                                    type="text"
+                                    className="form__input"
+                                    id="name"
+                                    autoComplete="off"
+                                    // required
+                                    ref={inputName}
+                                />
+                                <label className="form__label" htmlFor="name">
+                                    <span className="form__name">Email</span>
+                                </label>
+                            </>
                         </div>
 
                         <div className="box_btn">

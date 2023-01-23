@@ -17,7 +17,7 @@ export default function DirectMessages(prop) {
         setMessageArray([]);
         param.map((msg, i) => {
             setMessageArray(currentMessageArray => [...currentMessageArray,
-                    <MessageCapsule msg={msg} />
+                    <MessageCapsule key={i} msg={msg} />
                 ]);
         })
     }
