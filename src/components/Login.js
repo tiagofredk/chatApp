@@ -59,7 +59,6 @@ export default function Login() {
                                 </label>
                             </>
                         </div>
-
                         <div className="box_btn">
                             <button type="submit" className="box" id="btn" >Login</button>
                         </div>
