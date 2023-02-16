@@ -1,14 +1,18 @@
+import React from "react"
 import { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./RegisterScreen.css";
+import { Context } from "../../context/ContextProvider";
 
-const RegisterScreen = ({ history }) => {
+const RegisterScreen = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const { user, setUser, token, setToken } = React.useContext(Context);
+  const navigate = useNavigate();
 
   const registerHandler = async (e) => {
     e.preventDefault();
@@ -29,8 +33,8 @@ const RegisterScreen = ({ history }) => {
     }
 
     try {
-      const { data } = await axios.post(
-        "/api/auth/register",
+      const data = await axios.post(
+        "/api/register",
         {
           username,
           email,
@@ -38,10 +42,11 @@ const RegisterScreen = ({ history }) => {
         },
         config
       );
+      console.log(data);
+      if (data.data.session.authenticated) {
+        navigate("/chat");
+      }
 
-      localStorage.setItem("authToken", data.token);
-
-      history.push("/");
     } catch (error) {
       setError(error.response.data.error);
       setTimeout(() => {

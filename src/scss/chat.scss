@@ -1,104 +1,127 @@
 .chat-container {
     display: flex;
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
-
-    .left-bar {
+    .search-box-container{
         display: flex;
-        min-width: 150px;
-        background-color: rgb(42, 35, 83);
-        .project-icon-container {
-            height: 100vh;
-            min-width: 50px;
-            border-right: rgb(172, 170, 170) solid 1px;
-            .project-icon {
-                p {
-                    color: #fff;
-                }
+        justify-content: center;
+        height: 3vh;
+        form{
+            input{}
+        }
+        .modal-element-box{
+            display: none;
+            position: absolute;
+            max-height: 400px;
+            max-width: 600px;
+            background-color: #fff;
+            p{}
+            ul{
+                li{}
             }
         }
-        .user-members-box {
-            min-width: 400px;
-            height: 100vh;
-            .user-container {
-                border-bottom: rgb(172, 170, 170) solid 1px;
-                height: 30px;
-                width: 100%;
-                p {
-                    color: #fff;
-                }
-            }
-            .channels-container {
-                border-bottom: rgb(172, 170, 170) solid 1px;
-                min-height: 100px;
-                width: 100%;
-                .channel {
+    }
+    .chat-bars-box {
+        display: flex;
+        .left-bar {
+            display: flex;
+            min-width: 150px;
+            background-color: rgb(42, 35, 83);
+            .project-icon-container {
+                height: 90vh;
+                min-width: 50px;
+                border-right: rgb(172, 170, 170) solid 1px;
+                .project-icon {
                     p {
                         color: #fff;
                     }
                 }
             }
-            .members-container {
-                min-height: 100px;
-                width: 100%;
-                p {
-                    color: #fff;
-                }
-                ul {
-                    li {
+            .user-members-box {
+                min-width: 400px;
+                height: 90vh;
+                .user-container {
+                    border-bottom: rgb(172, 170, 170) solid 1px;
+                    height: 30px;
+                    width: 100%;
+                    p {
                         color: #fff;
                     }
                 }
-            }
-        }
-    }
-
-    .right-bar {
-        height: 100vh;
-        width: 100vw;
-        .messages-box-container {
-            background-color: rgb(190, 189, 189);
-            height: 80%;
-            overflow: hidden scroll;
-            &::-webkit-scrollbar {
-                display: none;
-            }
-            .message-box {
-                display: flex;
-                width: 100%;
-                height: auto;
-                .message-delete-btn {
-                    margin-left: 20%;
-                }
-            }
-        }
-        .form-container {
-            height: 20%;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            
-            form {
-                display: flex;
-                .form-box {
-                    // margin-right: 2%;
-                    textarea {
-                        width: 70vw;
-                        height: 10vh;
+                .channels-container {
+                    border-bottom: rgb(172, 170, 170) solid 1px;
+                    min-height: 100px;
+                    width: 100%;
+                    .channel {
+                        p {
+                            color: #fff;
+                        }
                     }
-                    // label {
-                    //     span {
-                    //     }
-                    // }
                 }
-                .box_btn{
-                    margin: 0;
+                .members-container {
+                    min-height: 100px;
+                    width: 100%;
+                    p {
+                        color: #fff;
+                    }
+                    ul {
+                        li {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right-bar {
+            height: 90vh;
+            width: 100vw;
+            .messages-box-container {
+                background-color: rgb(190, 189, 189);
+                height: 80%;
+                overflow: hidden scroll;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+                .message-box {
                     display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    button{}
+                    width: 100%;
+                    height: auto;
+                    .message-delete-btn {
+                        margin-left: 20%;
+                    }
+                }
+            }
+            .form-container {
+                height: 20%;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+
+                form {
+                    display: flex;
+                    .form-box {
+                        // margin-right: 2%;
+                        textarea {
+                            width: 70vw;
+                            height: 10vh;
+                        }
+                        // label {
+                        //     span {
+                        //     }
+                        // }
+                    }
+                    .box_btn {
+                        margin: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        button {
+                        }
+                    }
                 }
             }
         }

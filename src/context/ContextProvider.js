@@ -10,6 +10,7 @@ export default function ContextProvider({ children }) {
     const [messageArray, setMessageArray] = React.useState([]); // array of html message elements
     const [id, setId] = React.useState(null);
     const inputMessage = React.useRef("");
+    const [token, setToken] = React.useState("");
     const [user, setUser] = React.useState({
         name: "Tiago",
         id: "5dc1ff2d-1d20-439d-adef-247df0a39a52",
@@ -161,7 +162,9 @@ export default function ContextProvider({ children }) {
                 setId,
                 sendMessage,
                 deleteMessage,
-                inputMessage
+                inputMessage,
+                token,
+                setToken
             }
         }>
             {children}
